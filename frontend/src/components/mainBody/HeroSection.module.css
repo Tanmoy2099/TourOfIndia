@@ -1,0 +1,255 @@
+.container {
+  display: block;
+  height: 100vh;
+  width: 100%;
+  transition: 0.3s;
+  margin-bottom: 5rem;
+  background-color: #eeeeee80;
+  backdrop-filter: blur(5px);
+}
+
+.heroSlide {
+  position: absolute;
+  left: 0;
+  height: 95vh;
+  width: 100%;
+  object-fit: contain;
+  transition: all 0.3s ease-in-out;
+
+}
+
+.mainImage {
+  display: flex;
+  height: inherit;
+  width: 100%;
+  box-shadow: 1rem 1rem 1rem #00000052;
+  transition: all 0.3s ease-in-out;
+
+}
+
+.carouselImg {
+  height: 95vh;
+  transition: all 0.3s ease-in-out;
+}
+
+
+.frontLogo {
+  font-family: 'Dancing Script', cursive;
+  position: absolute;
+  left: 20%;
+  top: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+
+}
+
+.frontLogo--span1 {
+
+  margin: 0 auto 1rem auto;
+  padding: 0.1rem 1rem;
+  background-color: #00000057;
+  border-radius: 7rem;
+  box-shadow: 3rem 1rem 1.5rem #00000057;
+  font-size: 7rem;
+  animation: leftToRight 500ms ease-in-out;
+  z-index: 1;
+  color: white;
+  backdrop-filter: blur(2px);
+
+}
+
+
+
+.frontLogo--span2 {
+  font-weight: 400;
+  color: white;
+  font-size: 3rem;
+  background-color: #00000057;
+  border-radius: 7rem;
+  box-shadow: 3rem 1rem 1rem #0000003b;
+  animation: RightToLeft 500ms ease-in-out;
+  z-index: 1;
+  backdrop-filter: blur(5px);
+}
+
+.frontLogo--btn {
+  z-index: 1;
+  display: inline-block;
+  position: relative;
+  width: 20rem;
+  height: 6rem;
+  margin-top: 2rem;
+  background-color: #fff;
+  font-size: 3rem;
+  border-radius: 7rem;
+  text-decoration: none;
+  animation: RightToLeft 500ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+.frontLogo--btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 3rem 1rem 1rem #00000071;
+
+}
+
+.frontLogo--btn:active {
+  transform: translateY(-1px);
+  box-shadow: 3rem 1rem 0.6rem #0000003a;
+}
+
+.frontLogo--btn:after {
+  content: "";
+  z-index: 1;
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 7rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 400ms ease-in-out;
+}
+
+.frontLogo--btn:hover::after {
+  transform: scalex(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+
+@keyframes leftToRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-50rem);
+  }
+
+  80% {
+    opacity: 0.7;
+    transform: translateX(5rem);
+
+  }
+
+  100% {
+    transform: translateX(0rem);
+
+  }
+}
+
+
+@keyframes RightToLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(50rem);
+  }
+
+  80% {
+    opacity: 0.7;
+    transform: translateX(-5rem);
+
+  }
+
+  100% {
+    transform: translateX(0rem);
+
+  }
+}
+
+@media only screen and (max-width: 783px) {
+  .container {
+    height: 40rem;
+    overflow: hidden;
+
+  }
+
+  .mainImage {
+    display: flex;
+    height: 40rem;
+    overflow: hidden;
+  }
+
+  .carouselImg {
+    height: 40rem;
+    overflow: hidden;
+  }
+
+
+  .frontLogo {
+    top: 22%;
+  }
+
+  .mainImage {
+    height: 40rem;
+  }
+
+  .frontLogo--span1 {
+    font-size: 5rem;
+  }
+
+
+  .frontLogo--span2 {
+    font-size: 2rem;
+  }
+
+  .frontLogo--btn {
+    font-size: 2rem;
+    width: 15rem;
+    height: 4rem;
+  }
+}
+
+
+@media only screen and (max-width: 650px) {
+
+  .container {
+    display: block;
+    height: 32rem;
+  }
+
+  .mainImage {
+    display: flex;
+    height: 32rem;
+  }
+
+  .frontLogo {
+    top: 18%;
+  }
+
+  .frontLogo--span1 {
+    font-size: 3.5rem;
+  }
+
+
+  .frontLogo--span2 {
+    font-size: 1.5rem;
+  }
+
+  .frontLogo--btn {
+    font-size: 2rem;
+    width: 12rem;
+    height: 4rem;
+
+  }
+}
+
+@media only screen and (max-width: 400px) {
+
+  .container {
+    height: 30rem;
+  }
+
+  .mainImage {
+    height: 30rem;
+  }
+}
+
+
+@media only screen and (min-width:1200px) {
+
+
+  .mainImage {
+    object-fit: fill;
+  }
+}

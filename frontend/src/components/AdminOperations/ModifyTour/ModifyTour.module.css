@@ -1,0 +1,26 @@
+.container {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+    font-size: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.input {
+    /* max-width: 100rem; */
+    height: 3rem;
+    font-size: 1.5rem;
+}
+
+.select {
+    width: 15rem;
+    font-size: 1.5rem;
+}
+
+@media only screen and (max-width:800px) {
+    .container {
+        width: 99%;
+    }
+}

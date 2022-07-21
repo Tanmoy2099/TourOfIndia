@@ -1,0 +1,21 @@
+.container {
+  min-height: 25rem;
+  width: 25rem;
+  margin: 1rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  grid-template-columns: 1fr;
+  transition: all 300ms ease-in-out;
+  box-shadow: 0.5rem 0.5rem 1rem #0000007e;
+}
+
+.image {
+  width: 10rem;
+  height:10rem;
+  border-radius: 5px;
+  object-fit: fill;
+  overflow: hidden;
+}
+

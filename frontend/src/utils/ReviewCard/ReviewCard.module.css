@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  height: 25rem;
+  width: 30rem;
+  border-radius: 0.5rem;
+  box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.466);
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.userInfo {
+  height: 30%;
+  padding: 0.3rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.container p {
+  padding: 2px 5px;
+}
+
+.container strong {
+  padding: 1px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: green;
+  border: 2px solid green;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.container span {
+  letter-spacing: 1px;
+  font-style: italic;
+  word-wrap:break-word;
+}
+
+
+.avatar {
+  grid-row: span 2;
+  width: 85%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.review {
+  margin-top: 2px;
+  justify-content: center;
+  height: 70%;
+  flex-wrap: wrap;
+  overflow: scroll;
+}

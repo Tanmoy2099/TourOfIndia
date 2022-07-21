@@ -9,7 +9,7 @@ const placeSchema = new mongoose.Schema(
       unique: true,
       trim: true,
       maxlength: [40, 'A tour name must have less or equal then 40 characters'],
-      minlength: [10, 'A tour name must have more or equal then 10 characters'],
+      minlength: [4, 'A tour name must have more or equal then 10 characters'],
     },
     info: {
       type: String,
@@ -22,15 +22,15 @@ const placeSchema = new mongoose.Schema(
       lat: Number,
       long: Number,
     },
-    slug:String,
-    place: {
-      type: mongoose.Schema.ObjectId,
-      ref: "Tour"
-    },
-    tourName: {
-      type: String,
-      required: [true, "A place must have a tour name"]
-    },
+    slug: String,
+    // place: {
+    //   type: mongoose.Schema.ObjectId,
+    //   ref: "Tour"
+    // },
+    // tourName: {
+    //   type: String,
+    //   required: [true, "A place must have a tour name"]
+    // },
     coverImage: {
       type: String,
       required: [true, "A place must have a cover image"]
@@ -45,7 +45,7 @@ const placeSchema = new mongoose.Schema(
 
 
 placeSchema.pre('save', function (next) {
-  
+
   this.slug = slugify(this.name, { lower: true });
   next();
 });

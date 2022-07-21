@@ -8,7 +8,7 @@ const tourSchema = new mongoose.Schema(
       required: [true, 'A tour must have a name'],
       unique: true,
       trim: true,
-      maxlength: [30, 'A tour name must have less or equal then 40 characters'],
+      maxlength: [80, 'A tour name must have less or equal then 40 characters'],
       minlength: [3, 'A tour name must have more or equal then 10 characters'],
     },
     state: {
@@ -29,7 +29,7 @@ const tourSchema = new mongoose.Schema(
     },
     groupSizeMax: {
       type: Number,
-      required: [true, 'A tour must have a group size']
+      required: [true, 'A tour must have a maximum group size']
     },
     ratingsAverage: {
       type: Number,
@@ -60,6 +60,11 @@ const tourSchema = new mongoose.Schema(
       min: 1,
       max: 12
     }],
+    place: [{
+      type: mongoose.Schema.ObjectId,
+      ref: 'Place',
+      required: [true, "Tours must contain places"]
+    }],
     createdAt: {
       type: Date,
       default: Date.now(),
@@ -78,6 +83,22 @@ tourSchema.virtual('reviews', {
   foreignField: 'tour',
   localField: '_id'
 });
+
+// tourSchema.virtual('place', {
+//   ref: "Place",
+//   foreignField: 'place',
+//   localField: '_id'
+
+// })
+
+tourSchema.pre(/^find/, function(next){
+  this.populate({
+    path:'place',
+    select: '-__v -createdAt'
+  })
+  next();
+})
+
 
 tourSchema.pre('save', function (next) {
   const tempSlug = `${this.name} ${this.state} ${this.summery}`;

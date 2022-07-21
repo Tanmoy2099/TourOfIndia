@@ -1,0 +1,18 @@
+.gotoTop {
+    z-index: 4;
+    float: right;
+    background-color: #009e00;
+    border: #009e00;
+    font-size: 2rem;
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
+    font-weight: 900;
+    box-shadow: 0.5rem 0.5rem 1rem #000000a4;
+    position: fixed;
+    bottom: 3rem;
+    right: 2rem;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+}

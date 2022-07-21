@@ -1,6 +1,6 @@
 
-const multer = require('multer');
 const sharp = require('sharp');
+const multer = require('multer');
 
 const Tour = require('../models/tourModel');
 const crud = require('../controllers/genericCrud');
@@ -9,11 +9,11 @@ const catchAsync = require('./../utils/catchAsync');
 const { findById } = require('../models/userModel');
 
 
+exports.createTour = crud.create(Tour);
+exports.getOneTour = crud.getOne(Tour); //"reviews"
 exports.getAllTours = crud.getAll(Tour);
-exports.getOneTour = crud.getOne(Tour);
 exports.updateOneTour = crud.updateOne(Tour);
 exports.deleteOneTour = crud.deleteOne(Tour);
-exports.createTour = crud.create(Tour);
 
 exports.getPlacesBasedOnTour = catchAsync(async (req, res, next) => {
     const tour = await findById(req.params.id)
@@ -44,13 +44,18 @@ exports.getReviewsOfTheTour = catchAsync(async (req, res, next) => {
         data: doc
     });
 });
-exports.aliasTopTours = (req, res, next) => {
-    req.query.limit = '5';
-    req.query.sort = '-ratingsAverage,travelPackage';
-    req.query.fields = 'name,travelPackage,ratingsAverage,summary,state';
+
+exports.excludeUnnecessary = (req, res, next) => {
+    req.query.fields = '-__v,-createdAt,';
     next();
 };
 
+
+exports.aliasTopTours = (req, res, next) => {
+    req.query.limit = '6';
+    req.query.sort = '-ratingsAverage,travelPackage';
+    next();
+};
 
 exports.aliasTourThisMonth = crud.specifitMonthTour(Tour, new Date().getMonth() + 1);
 exports.aliasTourNextMonth = crud.specifitMonthTour(Tour, new Date().getMonth() + 2);

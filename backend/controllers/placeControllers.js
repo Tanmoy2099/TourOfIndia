@@ -25,17 +25,21 @@ exports.updateOnePlace = catchAsync(async (req, res, next) => {
 });
 
 exports.createPlace = catchAsync(async (req, res, next) => {
-  if (!req.body.tourName) {
-    return new customError(400, 'Please provide the tour name')
-  }
-  req.body.tourName = req.body.tourName[0].toUpperCase() + req.body.tourName.substring(1).toLowerCase();
+  // if (!req.body.tourName) {
+  //   return new customError(400, 'Please provide the tour name')
+  // }
+  // req.body.tourName = req.body.tourName[0].toUpperCase() + req.body.tourName.substring(1).toLowerCase();
 
-  tourDetails = await Tour.findOne({ name: req.body.tourName })
-  if (!tourDetails) {
-    return new customError(400, 'Please create the tour first')
-  }
+  // tourDetails = await Tour.findOne({ name: req.body.tourName })
+  // if (!tourDetails) {
+  //   return new customError(400, 'Please create the tour first')
+  // }
+
+const { name, info, images, coverImage, coordinate, location } = req.body
+console.log(req.body);
 
   const doc = await Place.create(req.body);
+
   res.status(201).json({
     status: 'ok',
     data: doc

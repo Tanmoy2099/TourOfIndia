@@ -1,0 +1,24 @@
+.mainSection {
+    font-size: 1.8rem;
+    text-decoration: none;
+    background-image: url("https://c0.wallpaperflare.com/preview/210/680/1018/autumn-red-foliage-colors.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    min-height: 100vh;
+}
+
+.MainImage {
+    background-image: url(https://www.wsp.com/-/media/Insights/Global/Image/bnr-water-insights.jpg?h=750&w=1920&hash=11C2D5C3C539C3CD7ED9657D994A1494477408D5);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 20rem;
+}
+
+.profileInfo {
+    font-family: 'Poppins', sans-serif;
+    margin-top: 10rem;
+    background-color: #00000062;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+}

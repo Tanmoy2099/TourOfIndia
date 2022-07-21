@@ -1,0 +1,3 @@
+const allStatesName = ["Andhra Pradesh", "Bihar", "Assam", "Arunachal Pradesh", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Kerala", "Karnataka", "Maharashtra", "Madhya Pradesh", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Orissa", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Goa", "West Bengal", "Chattisgarh", "Uttarakhand", "Andaman & Nicobar"].sort()
+
+export default allStatesName;

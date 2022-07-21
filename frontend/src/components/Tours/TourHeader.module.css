@@ -1,0 +1,194 @@
+.coverImageContainer {
+    width: 100%;
+    height: 60rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4rem;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 3rem 1rem 1.5rem rgba(0, 0, 0, 0.34);
+}
+
+.coverImageContainer>img {
+    height: 130%;
+
+}
+
+.frontLogo {
+    font-family: 'Dancing Script', cursive;
+    position: absolute;
+    left: 8%;
+    top: 28%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.frontLogo--span1 {
+
+    margin: 0 auto 1rem auto;
+    padding: 0.1rem 1rem;
+    background-color: rgba(0, 0, 0, 0.34);
+    border-radius: 7rem;
+    box-shadow: 3rem 1rem 1.5rem rgba(0, 0, 0, 0.34);
+    font-size: 7rem;
+    animation: leftToRight 500ms ease-in-out;
+    z-index: 1;
+    color: white;
+    backdrop-filter: blur(2px);
+    /* transition: all 0.3s ease-in-out; */
+}
+
+
+.frontLogo--btn {
+    z-index: 1;
+    display: inline-block;
+    position: relative;
+    width: 20rem;
+    height: 6rem;
+    margin-top: 1.5rem;
+    background-color: #fff;
+    font-size: 3rem;
+    border-radius: 7rem;
+    text-decoration: none;
+    animation: RightToLeft 500ms ease-in-out;
+    transition: all 200ms ease-in-out;
+}
+
+.frontLogo--btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 3rem 1rem 1rem #00000071;
+
+}
+
+.frontLogo--btn:active {
+    transform: translateY(-1px);
+    box-shadow: 3rem 1rem 0.6rem #0000003a;
+}
+
+.frontLogo--btn:after {
+    content: "";
+    z-index: 1;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 7rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 400ms ease-in-out;
+}
+
+.frontLogo--btn:hover::after {
+    transform: scalex(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+
+
+@keyframes leftToRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-50rem);
+    }
+
+    80% {
+        opacity: 0.7;
+        transform: translateX(5rem);
+
+    }
+
+    100% {
+        transform: translateX(0rem);
+
+    }
+}
+
+
+
+@media only screen and (max-width: 850px) {
+    /* .coverImageContainer {
+        height: 40rem;
+    } */
+
+    .frontLogo {
+        top: 30%;
+    }
+
+    .frontLogo--span1 {
+        font-size: 5rem;
+    }
+}
+
+@media only screen and (max-width: 783px) {
+    .coverImageContainer {
+        height: 35rem;
+    }
+
+    .frontLogo {
+        top: 20%;
+        left: 15%;
+    }
+
+    .frontLogo--span1 {
+        font-size: 3.2rem;
+    }
+
+    .coverImageContainer>img {
+        height: 100%;
+    }
+
+    .frontLogo--btn {
+        font-size: 2rem;
+        width: 15rem;
+        height: 4rem;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .coverImageContainer {
+        height: 30rem;
+    }
+
+    .frontLogo {
+        top: 18%;
+    }
+
+    .frontLogo--span1 {
+        font-size: 2.7rem;
+    }
+
+    .frontLogo--btn {
+        font-size: 1.8rem;
+        width: 12rem;
+        height: 4rem;
+
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .coverImageContainer {
+        height: 25rem;
+    }
+
+    .frontLogo {
+        top: 15%;
+        left: 10%;
+    }
+
+    .frontLogo--span1 {
+        font-size: 2.2rem;
+    }
+
+    .frontLogo--btn {
+        margin-top: 0.2rem;
+        font-size: 1.8rem;
+        width: 11rem;
+        height: 3.5rem;
+
+    }
+}

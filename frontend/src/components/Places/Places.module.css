@@ -1,0 +1,27 @@
+.container {
+    max-width: 75%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    font-size: 2rem;
+    transition: all 0.3s ease-in-out;
+}
+
+@media only screen and (max-width: 1100px) {
+    .container {
+        max-width: 85%;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .container {
+        max-width: 99%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}

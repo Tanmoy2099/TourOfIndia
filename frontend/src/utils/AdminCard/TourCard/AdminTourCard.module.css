@@ -1,0 +1,61 @@
+.tourContainer {
+  width: 32rem;
+  box-shadow: 1rem 1rem 1rem #0000004b;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin: 1rem;
+  transition: all 300ms ease-in-out;
+  background: #eee;
+}
+
+.tourContainer:hover {
+  transform: scale(1.02);
+}
+
+.tourImage {
+  margin-right: 0.5rem;
+  height: 20rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-size: cover;
+
+}
+
+.summery {
+  font-style: italic;
+  font-size: 1.4rem;
+  text-align: justify;
+  height: 9rem;
+  overflow: auto;
+  padding-right: 0.5rem;
+}
+
+.tourImage>h3 {
+  font-family: 'Dancing Script', cursive;
+  height: fit-content;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-top: 1rem;
+  padding: 0.8rem;
+  border-radius: 1rem;
+  background-color: #0672025d;
+  color: white;
+  text-align: center;
+}
+
+.TourDetails {
+  width: fit-content;
+  height: fit-content;
+  display: inline-block;
+}
+
+
+@media only screen and (max-width: 900px) {
+  .tourContainer {
+    width: 30rem;
+  }
+
+}
