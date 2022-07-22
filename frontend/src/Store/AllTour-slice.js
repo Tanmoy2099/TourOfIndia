@@ -1,16 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    allTours: [],
+  allTours: [],
 }
 const allTourSlice = createSlice({
-    name: 'alltour',
-    initialState,
-    reducers: {
-        AllToursUpdate(state, action) {
-            state.allTours = action.payload;
-        }
+  name: 'alltour',
+  initialState,
+  reducers: {
+    AllToursUpdate(state, action) {
+      state.allTours = action.payload;
     }
+  }
 });
 
 export const allTourActions = allTourSlice.actions;

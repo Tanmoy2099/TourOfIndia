@@ -11,10 +11,11 @@ const TourHeader = props => {
         {props?.state && <>
           <h3 className={`fs-2 ${classes["frontLogo--span1"]}`}>{props?.state}</h3>
 
-          <Link to={`/book-tour/${props._id}`}
+          {!props?.booking && <Link to={`/book-tour/${props._id}`}
             className={` p-2 btn ${classes["frontLogo--btn"]}`} draggable='false'>
             Book the Tour
           </Link>
+          }
         </>
         }
 

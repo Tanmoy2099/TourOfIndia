@@ -1,7 +1,7 @@
 
 import { useState, useReducer } from 'react'
 import ChangePassContainer from '../Change Password/ChangePassContainer';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { userActions } from '../../../../Store/user-slice';
 import MessageModal from '../../../../utils/MessageModal';
 import { useNavigate } from 'react-router-dom';
@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
 
 const UpdateProfile = () => {
   const Navigate = useNavigate();
-  const { user } = useSelector(state => state)
+  // const { user } = useSelector(state => state)
   const dispatch = useDispatch();
   const [message, setMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);

@@ -8,7 +8,7 @@ import LoadingSpinner from '../../utils/LoadingSpinner';
 import LoadingBar from '../../utils/LoadingBar';
 import ErrorModal from '../../utils/ErrorModal';
 
-import Fade from 'react-reveal/Fade';
+
 
 const SliderCard = lazy(() => import('../SliderCard/SliderCard'));
 const HeroSection = lazy(() => import('./HeroSection'));
@@ -35,22 +35,19 @@ const MainBody = () => {
         style={{ backdropFilter: `blur(2px)` }}
       >
 
-        <Fade left>
+
           <SliderCard data={state} />
-        </Fade>
+
       </div>
     </Suspense>
     <Suspense fallback={
       <div className='centered'> <LoadingSpinner /> </div>
     }>
-      <Fade right>
         <TopTours isLoading={isLoading} />
-      </Fade>
 
       <LoadingBar isLoading={isLoading} />
-      <Fade left>
+      
         <Decoration />
-      </Fade>
 
     </Suspense>
   </>

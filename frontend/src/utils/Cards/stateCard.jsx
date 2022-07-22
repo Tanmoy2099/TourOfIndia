@@ -4,6 +4,8 @@ import classes from './stateCard.module.css';
 import { tourActions } from '../../Store/currentTour-slice';
 import { useDispatch } from "react-redux";
 
+import Flip from 'react-reveal/Flip';
+
 const StateCard = ({ _id: id, name, image }) => {
   const dispatch = useDispatch();
 
@@ -11,6 +13,8 @@ const StateCard = ({ _id: id, name, image }) => {
 
 
   return <>
+  <Flip right>
+
     <div
       className={` d-flex ${classes.container}`}
       style={{ backgroundImage: `url(${image})` }}
@@ -23,6 +27,7 @@ const StateCard = ({ _id: id, name, image }) => {
         <h3 className={classes.title}>{name || 'Title'}</h3>
       </div>
     </div>
+    </Flip>
   </>
 }
 

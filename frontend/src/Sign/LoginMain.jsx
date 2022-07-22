@@ -17,7 +17,7 @@ const LoginMain = () => {
 
 useEffect(() => {
   setTimeout(() => {
-    if (isLoggedIn) navigate('/')
+    if (isLoggedIn) navigate(-1)
   }, 1000);
 
   return () => {

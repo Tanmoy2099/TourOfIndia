@@ -19,13 +19,13 @@ const tourSlice = createSlice({
             state.stateId = action.payload;
         },
         setCurState(state, action){
-            state.curState = action.payload
+            state.curState = action.payload;
         },
         setCurTour(state, action){
-            state.curTour = action.payload
+            state.curTour = action.payload;
         },
         setReview(state, action){
-            state.reviews = action.payload
+            state.reviews = action.payload;
         }
     }
 });

@@ -50,38 +50,39 @@
 }
 
 .image>div {
-  background: #ffffff83;
+  background: #00000083;
   backdrop-filter: blur(5px);
   height: 100%;
   width: 100%;
   display: flex;
-  /* border-radius: 1rem; */
+  color: #f1ff7099;
   justify-content: center;
   align-items: center;
   transition: all 500ms ease-in-out;
-  color: rgba(0, 128, 0, 0.6);
 }
 
 .image>div p {
   font-family: 'Poppins', sans-serif;
-  font-size: 3rem;
+  font-size: 2.5rem;
   overflow: hidden;
   /* background-color: #ffffff80; */
   padding: 0.5rem;
   border-radius: 5px;
+  
 }
 
-.image>div p:hover {
-  overflow: hidden;
-  background-color: #00000080;
-}
 
 
 .image>div:hover {
   background: #00800000;
   backdrop-filter: blur(0);
   color: white;
+  
+}
 
+.image>div p:hover {
+  overflow: hidden;
+  background-color: #00000080;
 }
 
 @media only screen and (max-width:1010px) {

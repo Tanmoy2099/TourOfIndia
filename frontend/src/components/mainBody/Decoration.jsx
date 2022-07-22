@@ -6,6 +6,8 @@ import kerala from '../../assets/img/kerala.jpg';
 import manali from '../../assets/img/manali.jpg';
 import Uttarakhand from '../../assets/img/Uttarakhand.jpg';
 
+import Flip from 'react-reveal/Flip';
+
 const Decoration = () => {
   return <>
   <div className='container d-flex justify-content-center my-3 '>
@@ -16,6 +18,8 @@ const Decoration = () => {
     <div className={classes.background}
     >
       <div className={classes.container} >
+
+        <Flip right>
         <div className={classes.image} style={{ 
           backgroundImage: `url(${Uttarakhand})` }} 
           draggable='false' >
@@ -23,6 +27,8 @@ const Decoration = () => {
             <p>Uttarakhand</p>
           </div>
         </div>
+        </Flip>
+          <Flip left>
         <div className={classes.image} style={{ 
           backgroundImage: `url(${kashmir})` }} 
           draggable='false' >
@@ -30,8 +36,8 @@ const Decoration = () => {
             <p>Kashmir</p>
           </div>
         </div>
-
-
+          </Flip>
+            <Flip right>
         <div className={classes.image} style={{
           backgroundImage: `url(${rajasthan})`
         }} draggable='false' >
@@ -39,7 +45,8 @@ const Decoration = () => {
             <p>Rajasthan</p>
           </div>
         </div>
-
+            </Flip>
+              <Flip left>
         <div className={classes.image} style={{
           backgroundImage: `url(${kerala})`
         }} draggable='false' >
@@ -47,7 +54,8 @@ const Decoration = () => {
             <p>Kerala</p>
           </div>
         </div>
-
+              </Flip>
+                <Flip right>
         <div className={classes.image} style={{
           backgroundImage: `url(${manali})`
         }} draggable='false' >
@@ -55,7 +63,7 @@ const Decoration = () => {
             <p>Manali</p>
           </div>
         </div>
-
+                </Flip>
 
       </div>
     </div>

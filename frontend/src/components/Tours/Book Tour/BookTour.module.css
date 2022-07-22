@@ -1,0 +1,9 @@
+.container {
+  max-width: 70rem;
+}
+
+.header {
+  font-size: 3rem;
+  font-family: 'Poppins', sans-serif;
+justify-self: center;
+}

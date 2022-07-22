@@ -7,6 +7,7 @@ import classes from './SliderCard.module.css';
 import StateCard from '../../utils/Cards/stateCard';
 
 
+
 //Slider for states in main body
 
 const SliderCard = props => {
@@ -50,6 +51,7 @@ const SliderCard = props => {
       {dataArray ? dataArray : <h2>Not Found</h2>}
     </div>
   </div>
+  
 }
 
 export default SliderCard;

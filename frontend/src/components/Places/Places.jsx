@@ -10,12 +10,14 @@ import TourPlaces from '../Tours/TourPlaces/TourPlaces';
 import TourDetails from '../Tours/TourDetails/TourDetails';
 
 import { useCurrentHttpOperations } from '../../custom-hooks/currentHttpOperations-hook';
+import MapBox from './MapBox';
 
 
 const Places = () => {
   const { Id } = useParams();
   const { currentTourId, getCurTourReview } = useCurrentHttpOperations();
   const { curTour, reviews } = useSelector(state => state.tour);
+
 
 
   useEffect(() => {
@@ -69,6 +71,11 @@ const Places = () => {
     >Places to visit!</h1>
     {/* <div className={classes.container}> */}
       {locations}
+
+
+    <MapBox place={curTour.place} />
+
+
     {/* </div> */}
     <h1 className='container text-center my-3'
       style={{

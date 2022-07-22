@@ -14,78 +14,83 @@ import { GiDuration } from 'react-icons/gi';
 import { FiFlag } from 'react-icons/fi';
 import { AiFillStar } from 'react-icons/ai';
 
-const TourCards = ({ tour, stateId }) => {
-  const {tourId } = useParams();
+import Flip from 'react-reveal/Flip';
+
+const TourCards = ({ tour }) => {
+  const { tourId } = useParams();
   const iconStyle = { fontSize: '2rem', color: 'green' };
-const {states} = useSelector(val => val.states)
+  const { states } = useSelector(val => val.states)
 
 
-const state = states.find(val => _.kebabCase(val.name) === _.kebabCase(tour.state));
+  const state = states.find(val => _.kebabCase(val.name) === _.kebabCase(tour.state));
 
 
   return <>
-    <div className={classes.tourContainer}>
 
-      {/* Tour Image & Name */}
-      <div className={classes.tourImage} style={{ backgroundImage: `url(${tour?.coverImage})` }}>
-        <h3>{tour?.name}</h3>
+    <Flip left>
+      <div className={classes.tourContainer}>
+
+        {/* Tour Image & Name */}
+        <div className={classes.tourImage} style={{ backgroundImage: `url(${tour?.coverImage})` }}>
+          <h3>{tour?.name}</h3>
+        </div>
+
+        {/* Tour description */}
+        <div style={{ margin: '1rem', marginBottom: '0.2rem' }}>
+          <p className={classes.summery}> {tour?.summery}...
+          </p>
+
+          <FlexBetween>
+            {/* Duration */}
+            <h4 className={classes.TourDetails}>
+              <GiDuration style={iconStyle} />
+              {` `}{tour?.duration || "NaN"} <span className='fs-4' >days</span>
+            </h4>
+
+            {/* Money */}
+            <h4 className={`fs-3 ${classes.TourDetails}`}>
+              <BiRupee style={iconStyle} />
+              {tour?.travelPackage || "NaN"}<span className='fs-4'>/Person</span>
+            </h4>
+          </FlexBetween>
+
+          <FlexBetween>
+            {/* State */}
+            <h4 className={classes.TourDetails}>
+              <MdLocationOn style={iconStyle} /> {` `}{tour?.state || "NaN"}
+            </h4>
+
+            {/* People */}
+            <h4 className={classes.TourDetails}>
+              <BiGroup style={iconStyle} /> {` `}
+              {tour?.groupSizeMin || "NaN"}-{tour?.groupSizeMax || "NaN"} <span className='fs-4'>People</span>
+            </h4>
+          </FlexBetween>
+
+          {/* Places number & rating */}
+          <FlexBetween>
+            {/* Places  */}
+            <h4 className={classes.TourDetails}>
+              <FiFlag style={iconStyle} /> {` `}{tour?.place.length || "NaN"} <span className='fs-4' >stops</span>
+            </h4>
+
+            {/* Rating  */}
+            <h4 className={classes.TourDetails}>
+              <AiFillStar style={iconStyle} /> {` `}{tour?.ratingsAverage || "NaN"}
+            </h4>
+          </FlexBetween>
+        </div>
+        <div style={{ margin: '1rem' }}>
+
+
+          {/* Creating Link to Specific tour */}
+          <Link to={`/${state._id}/tour/${tourId || tour?._id}`}
+            className={`btn btn-lg fs-3 w-100`} style={{ backgroundColor: 'green', color: 'white' }}>
+            Details
+          </Link>
+        </div>
       </div>
-
-      {/* Tour description */}
-      <div style={{ margin: '1rem', marginBottom: '0.2rem' }}>
-        <p className={classes.summery}> {tour?.summery}...
-        </p>
-
-        <FlexBetween>
-          {/* Duration */}
-          <h4 className={classes.TourDetails}>
-            <GiDuration style={iconStyle} />
-            {` `}{tour?.duration || "NaN"} <span className='fs-4' >days</span>
-          </h4>
-
-          {/* Money */}
-          <h4 className={`fs-3 ${classes.TourDetails}`}>
-            <BiRupee style={iconStyle} />
-            {tour?.travelPackage || "NaN"}<span className='fs-4'>/Person</span>
-          </h4>
-        </FlexBetween>
-
-        <FlexBetween>
-          {/* State */}
-          <h4 className={classes.TourDetails}>
-            <MdLocationOn style={iconStyle} /> {` `}{tour?.state || "NaN"}
-          </h4>
-
-          {/* People */}
-          <h4 className={classes.TourDetails}>
-            <BiGroup style={iconStyle} /> {` `}
-            {tour?.groupSizeMin || "NaN"}-{tour?.groupSizeMax || "NaN"} <span className='fs-4'>People</span>
-          </h4>
-        </FlexBetween>
-
-        {/* Places number & rating */}
-        <FlexBetween>
-          {/* Places  */}
-          <h4 className={classes.TourDetails}>
-            <FiFlag style={iconStyle} /> {` `}{tour?.place.length || "NaN"} <span className='fs-4' >stops</span>
-          </h4>
-
-          {/* Rating  */}
-          <h4 className={classes.TourDetails}>
-            <AiFillStar style={iconStyle} /> {` `}{tour?.ratingsAverage || "NaN"}
-          </h4>
-        </FlexBetween>
-      </div>
-      <div style={{ margin: '1rem' }}>
-
-
-        {/* Creating Link to Specific tour */}
-        <Link to={`/${state._id}/tour/${tourId || tour?._id}`}
-          className={`btn btn-lg fs-3 w-100`} style={{ backgroundColor: 'green', color: 'white' }}>
-          Details
-        </Link>
-      </div>
-    </div>
+    </Flip>
   </>
 }
 

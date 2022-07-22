@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import classes from './MyProfile.module.css';
@@ -11,9 +11,9 @@ const MyProfile = () => {
   const [show, setShow] = useState(false);
 
 
-useEffect(() => {
+// useEffect(() => {
 
-}, [data, actualPhoto]);
+// }, [data, actualPhoto]);
 
 
 
