@@ -22,7 +22,7 @@ const useLogout = () => {
           throw new Error(res.data)
         }
       }).catch(err => console.log(err.message))
-  }, []);
+  }, [dispatch, sendRequest]);
 
   return loggedOut;
 };

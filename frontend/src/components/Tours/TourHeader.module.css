@@ -4,10 +4,10 @@
     overflow: hidden;
     display: flex;
     justify-content: center;
+    box-shadow: 3rem 1rem 1.5rem rgba(0, 0, 0, 0.34);
     align-items: center;
     margin-bottom: 4rem;
     transition: all 0.3s ease-in-out;
-    box-shadow: 3rem 1rem 1.5rem rgba(0, 0, 0, 0.34);
 }
 
 .coverImageContainer>img {
@@ -30,6 +30,7 @@
 
 .frontLogo--span1 {
 
+    z-index: 1;
     margin: 0 auto 1rem auto;
     padding: 0.1rem 1rem;
     background-color: rgba(0, 0, 0, 0.34);
@@ -37,10 +38,10 @@
     box-shadow: 3rem 1rem 1.5rem rgba(0, 0, 0, 0.34);
     font-size: 7rem;
     animation: leftToRight 500ms ease-in-out;
-    z-index: 1;
     color: white;
     backdrop-filter: blur(2px);
-    /* transition: all 0.3s ease-in-out; */
+    transition: all 0.3s ease-in-out;
+    word-wrap: break-word;
 }
 
 
@@ -151,7 +152,8 @@
 
 @media only screen and (max-width: 500px) {
     .coverImageContainer {
-        height: 30rem;
+        height: 35rem;
+        margin-bottom: 2rem;
     }
 
     .frontLogo {
@@ -172,16 +174,16 @@
 
 @media only screen and (max-width: 400px) {
     .coverImageContainer {
-        height: 25rem;
+        height: 35rem;
     }
 
     .frontLogo {
         top: 15%;
-        left: 10%;
+        left: 5%;
     }
 
     .frontLogo--span1 {
-        font-size: 2.2rem;
+        font-size: 2.0rem;
     }
 
     .frontLogo--btn {

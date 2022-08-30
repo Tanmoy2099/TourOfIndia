@@ -5,10 +5,9 @@ import { NavLink, Link } from 'react-router-dom';
 
 import { useFetch } from '../../custom-hooks/states-hook';
 import { useFetchUser } from '../../custom-hooks/User-hook';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useLogout } from '../../custom-hooks/logout-hook';
 
-import { useDispatch } from 'react-redux';
 import { userActions } from '../../Store/user-slice';
 
 import ErrorModal from '../../utils/ErrorModal';

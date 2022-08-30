@@ -6,6 +6,7 @@
   margin-bottom: 5rem;
   background-color: #eeeeee80;
   backdrop-filter: blur(5px);
+  box-shadow: 1rem 1rem 1rem #00000052;
 }
 
 .heroSlide {
@@ -22,7 +23,7 @@
   display: flex;
   height: inherit;
   width: 100%;
-  box-shadow: 1rem 1rem 1rem #00000052;
+  /* box-shadow: 1rem 1rem 1rem #00000052; */
   transition: all 0.3s ease-in-out;
 
 }
@@ -52,7 +53,7 @@
   padding: 0.1rem 1rem;
   background-color: #00000057;
   border-radius: 7rem;
-  box-shadow: 3rem 1rem 1.5rem #00000057;
+  /* box-shadow: 3rem 1rem 1.5rem #00000057; */
   font-size: 7rem;
   animation: leftToRight 500ms ease-in-out;
   z-index: 1;
@@ -69,7 +70,7 @@
   font-size: 3rem;
   background-color: #00000057;
   border-radius: 7rem;
-  box-shadow: 3rem 1rem 1rem #0000003b;
+  /* box-shadow: 3rem 1rem 1rem #0000003b; */
   animation: RightToLeft 500ms ease-in-out;
   z-index: 1;
   backdrop-filter: blur(5px);

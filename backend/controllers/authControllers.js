@@ -1,10 +1,10 @@
 const crypto = require('crypto');
-const { promisify } = require('util');
 const jwt = require('jsonwebtoken');
-const User = require('../models/userModel');
-const catchAsync = require('../utils/catchAsync');
-const AppError = require('../utils/customError');
+const { promisify } = require('util');
 const Email = require('./../utils/email');
+const User = require('../models/userModel');
+const AppError = require('../utils/customError');
+const catchAsync = require('../utils/catchAsync');
 
 // const path = require('path');
 // const fs = require('fs');
@@ -35,6 +35,9 @@ const createSendToken = (user, statusCode, req, res) => {
 };
 
 exports.signup = catchAsync(async (req, res, next) => {
+
+  //need to check if user exist with the same email id , also user account must be active  ADD IT IN YOUR FREE TIME
+
   const newUser = await User.create({
     name: req.body.name,
     email: req.body.email,
@@ -158,7 +161,7 @@ exports.protect = catchAsync(async (req, res, next) => {
 exports.LoginRefresh = async (req, res, next) => {
 
   // THERE IS A LOGGED IN USER
-  // res.locals.user = currentUser;
+  // res.user = currentUser;
   if (req.cookies.jwt) {
     res.status(200).json({
       status: 'ok',
@@ -235,7 +238,7 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
   try {
     // const resetURL = `${req.protocol}://${req.get('host')}/api/v1/users/resetPassword/${resetToken}`;
 
-    await new Email(user, resetToken).sendPasswordReset(); 
+    await new Email(user, resetToken).sendPasswordReset();
     res.status(200).json({
       status: 'ok',
       message: 'Token sent to email!'

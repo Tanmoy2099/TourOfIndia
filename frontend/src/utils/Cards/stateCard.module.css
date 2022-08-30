@@ -38,7 +38,7 @@
   transform: scale(1.04);
 }
 
-@media only screen and (max-width:426px) {
+@media only screen and (max-width:600px) {
   .container {
     height: 15rem;
     width: 15rem;
@@ -51,7 +51,7 @@
     font-size: 1.5rem;
   }
 }
-@media only screen and (max-width:321px) {
+@media only screen and (max-width:426px) {
   .container {
     height: 12rem;
     width: 12rem;

@@ -30,7 +30,7 @@
   text-align: justify;
   height: 9rem;
   overflow: auto;
-padding-right: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .tourImage>h3 {
@@ -58,4 +58,15 @@ padding-right: 0.5rem;
     width: 30rem;
   }
 
+}
+
+@media only screen and (max-width: 426px) {
+  .tourContainer {
+    width: 97%;
+  }
+
+  .summery {
+    height: fit-content;
+    max-height: 9rem;
+  }
 }

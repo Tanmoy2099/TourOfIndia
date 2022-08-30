@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import _ from 'lodash';
+// import _ from 'lodash';
 
 import classes from './AdminTourCard.module.css';
 import FlexBetween from '../../FlexBetween';

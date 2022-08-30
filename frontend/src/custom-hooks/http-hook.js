@@ -12,14 +12,17 @@ export const useHttpClient = () => {
       const httpAbortCtrl = new AbortController();
       activeHttpRequests.current.push(httpAbortCtrl);
       if (method !== 'GET' || method !== 'DELETE') {
-        headers = { 'Content-Type': 'application/json' }
+        headers = { ...headers, 'Access-Control-Allow-Origin': `https://tourindia-tan.web.app`, 'Content-Type': 'application/json' }
+        // headers = { ...headers, 'Content-Type': 'application/json' }
       }
-      
+
       try {
         const response = await fetch(url, {
           method,
           body,
           headers,
+          credentials: 'include',
+
           signal: httpAbortCtrl.signal,
         });
 

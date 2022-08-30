@@ -30,9 +30,6 @@ const ReviewCard = ({ rating, review, user }) => {
 
 useEffect(() => {
   profileImg()
-  return ()=> {
-    profileImg()
-  }
   
 }, []);
 

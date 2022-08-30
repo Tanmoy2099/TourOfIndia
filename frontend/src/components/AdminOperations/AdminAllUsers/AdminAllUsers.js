@@ -1,8 +1,9 @@
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import UserCard from '../../../utils/AdminCard/UserCard/UserCard';
 import { useHttpClient } from '../../../custom-hooks/http-hook';
 import ErrorModal from '../../../utils/ErrorModal';
+import LoadingBar from '../../../utils/LoadingBar';
 
 
 const AllUsers = () => {
@@ -89,6 +90,7 @@ const AllUsers = () => {
 
 
     <div className='container d-flex flex-wrap justify-content-center '>
+    {/* <LoadingBar /> */}
       {user? renderUserCard: <h4>No User</h4> }
     </div>
   </>
