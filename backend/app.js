@@ -103,11 +103,7 @@ app.use(
 // Using compression in the middleware data, and req,body
 app.use(compression());
 
-// index page
-app.get('/', (req, res) => {
-  res.redirect('/api/v1')
-})
-app.get('/api/v1', function (req, res) {
+app.get('/', function (req, res) {
   res.render('index');
 });
 
