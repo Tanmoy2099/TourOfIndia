@@ -22,21 +22,20 @@ const HeroSection = () => {
         <div className={`carousel-inner ${classes.mainImage}`}>
 
           <div className={`carousel-item active w-100 h-100`} data-bs-interval={interval}>
-            <img className={`d-block w-100 ${classes.carouselImg}`} src={hillStation} alt="locations" draggable="false" />
+            <img className={`d-block w-100 ${classes.carouselImg}`} src={hillStation} alt="locations" draggable="false" height='100%' width='100%'/>
           </div>
 
           <div className={`carousel-item w-100  h-100`} data-bs-interval={interval}>
-            <img className={`d-block w-100 ${classes.carouselImg}`} src={mountain} alt="locations2" draggable="false" />
+            <img className={`d-block w-100 ${classes.carouselImg}`} src={mountain} alt="locations2" draggable="false" height='100%' width='100%'/>
           </div>
 
           <div className={`carousel-item w-100  h-100`} data-bs-interval={interval} draggable="false">
-            <img className={`d-block w-100 ${classes.carouselImg}`} src={himalaya} alt="locations2" draggable="false" />
+            <img className={`d-block w-100 ${classes.carouselImg}`} src={himalaya} alt="locations2" draggable="false" height='100%' width='100%'/>
           </div>
 
           <div className={`carousel-item w-100  h-100`} data-bs-interval={interval} draggable="false">
-            <img className={`d-block w-100 ${classes.carouselImg}`} src={himalaya2} alt="locations2" draggable="false" />
+            <img className={`d-block w-100 ${classes.carouselImg}`} src={himalaya2} alt="locations2" draggable="false" height='100%' width='100%'/>
           </div>
-
         </div>
       </div>
 

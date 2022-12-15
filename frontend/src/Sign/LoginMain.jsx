@@ -16,12 +16,12 @@ const LoginMain = () => {
   const { isLoggedIn } = useSelector(state => state.user);
 
 useEffect(() => {
-  setTimeout(() => {
+  const unsub = setTimeout(() => {
     if (isLoggedIn) navigate(-1)
   }, 1000);
 
   return () => {
-    clearTimeout();
+    clearTimeout(unsub);
   };
 }, [isLoggedIn]);
 

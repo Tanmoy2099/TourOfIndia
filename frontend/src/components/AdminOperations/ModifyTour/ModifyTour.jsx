@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import classes from './ModifyTour.module.css';
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 import { useHttpClient } from '../../../custom-hooks/http-hook';
 import ErrorModal from '../../../utils/ErrorModal';
 
@@ -22,8 +22,10 @@ const ModifyTour = () => {
 
   // const [curTour, setCurTour] = useState([]);
   const [modifiedTour, setModifiedTour] = useState(initialData);
-  const { tourId } = useParams();
-  const { isLoading, error, sendRequest, clearError } = useHttpClient();
+  // const { tourId } = useParams();
+  const { error, clearError } = useHttpClient();
+
+  // const { isLoading, error, sendRequest, clearError } = useHttpClient();
 
   // useEffect(() => {
   //   const url = process.env.REACT_APP_GET_ALL_TOUR + '/' + tourId
