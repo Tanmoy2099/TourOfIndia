@@ -12,7 +12,8 @@ const AppError = require('./utils/customError');
 const globleError = require('./controllers/errorController');
 const cookieParser = require('cookie-parser');
 const compression = require('compression');
-const cors = require('cors');
+// const cors = require('cors');
+const corsMiddleware = require('./cors');
 
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
@@ -27,14 +28,28 @@ app.set('view engine', 'ejs');
 
 
 
-
 //Indicates the app is behind a front-facing proxy, and to use the X-Forwarded-* 
 //headers to determine the connection and the IP address of the client
 app.enable('trust proxy');
 
 // Cross-Origin Resource Sharing, restricts access from different domain. THIS SOLVES THAT.
-app.use(cors());
-app.options('*', cors());
+
+
+app.use(corsMiddleware);
+app.options('*', corsMiddleware);
+
+// app.use(cors());
+
+// app.use((req, res, next) => {
+//   res.header('Access-Control-Allow-Origin', "*");
+//   res.header('Access-Control-Allow-Methods', "GET,PUT,POST,DELETE,PATCH");
+//   res.header('Access-Control-Allow-Headers', "Content-Type");
+//   next();
+// })
+
+
+// app.options('*', cors());
+// app.options('https://tourindia-tan.web.app', cors());
 
 // Set security HTTP headers
 app.use(helmet());
@@ -74,12 +89,13 @@ app.use(xss());
 app.use(
   hpp({ // used to prevent duplicate parameter passed for the mondoDB, in the query. or params
     whitelist: [ //whitelisted schema params are allowed have duplicate parameter passed through the url
-      'ratingsQuantity',
       'ratingsAverage',
-      'maxGroupSize',
-      'difficulty',
+      'travelPackage',
+      'monthToTravel',
+      'groupSizeMin',
+      'groupSizeMax',
       'duration',
-      'price'
+      'info'
     ]
   })
 );
@@ -87,11 +103,7 @@ app.use(
 // Using compression in the middleware data, and req,body
 app.use(compression());
 
-// index page
-app.get('/', (req,res)=>{
-  res.redirect('/api/v1')
-})
-app.get('/api/v1', function (req, res) {
+app.get('/', function (req, res) {
   res.render('index');
 });
 

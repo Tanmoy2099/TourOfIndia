@@ -5,7 +5,6 @@ import classes from './BookTour.module.css';
 const BookTour = (props) => {
   const [noOfPeople, setNoOfPeople] = useState(1);
 
-  console.log(noOfPeople);
 
   return <>
     <div className={`container my-5 d-flex flex-column h-75 w-100 justify-content-center ${classes.container}`}>
@@ -25,11 +24,11 @@ const BookTour = (props) => {
       </div>
       <div className='d-flex justify-content-between'>
         <p className='fs-3'>Total Price</p>
-        <p className='fs-3'>{noOfPeople} x {props.travelPackage} = {noOfPeople*props.travelPackage} </p>
+        <p className='fs-3'>{noOfPeople} x {props.travelPackage} = Rs-{noOfPeople*props.travelPackage} </p>
 
       </div>
 
-      <button className='btn btn-success btn-lg'>Procide to pay</button>
+      <button className='btn btn-success btn-lg'>proceed to pay</button>
     </div>
   </>
 }

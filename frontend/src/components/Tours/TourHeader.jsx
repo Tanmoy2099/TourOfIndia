@@ -20,7 +20,7 @@ const TourHeader = props => {
         }
 
       </div>
-      <img src={props?.image || props?.coverImage} alt="tourImg" className='w-100' draggable="false" />
+      <img src={props?.image || props?.coverImage} alt="tourImg" className='w-100' draggable="false" height='100%' width='100%'/>
     </div>
   </>
 }

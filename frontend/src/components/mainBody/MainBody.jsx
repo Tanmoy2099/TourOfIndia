@@ -35,10 +35,10 @@ const MainBody = () => {
         style={{ backdropFilter: `blur(2px)` }}
       >
 
-
-          <SliderCard data={state} />
+          <SliderCard data={state} isLoading={isLoading}/>
 
       </div>
+
     </Suspense>
     <Suspense fallback={
       <div className='centered'> <LoadingSpinner /> </div>

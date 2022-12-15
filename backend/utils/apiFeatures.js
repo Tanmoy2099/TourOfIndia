@@ -26,6 +26,16 @@ class APIFeatures {
       this.query = this.query.sort('-createdAt');
     }
 
+
+    // This part is written by Tanmoy (same as above)
+    // let sortBy = '-createdAt'
+    // if (this.queryString.sort) {
+    //   sortBy = this.queryString.sort.split(',').join(' ');
+    // }
+    // this.query = this.query.sort(sortBy);
+
+    //............................
+
     return this;
   }
 

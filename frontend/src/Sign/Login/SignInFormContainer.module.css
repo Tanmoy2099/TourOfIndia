@@ -6,9 +6,10 @@
     height: 100vh;
 }
 
-@media only screen and (max-width:470px) {
+@media only screen and (max-width:500px) {
     .container {
         background-size: 100% 100%;
+        background-image: url('https://cdn.wallpapersafari.com/55/31/mxSk8z.jpg');
         height: 90vh;
     }
 }

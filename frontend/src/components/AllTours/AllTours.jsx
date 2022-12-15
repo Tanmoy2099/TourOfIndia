@@ -1,5 +1,5 @@
-import React, { Suspense, useEffect, useState } from 'react';
-import classes from './AllTours.module.css';
+import React, { useEffect, useState } from 'react';
+// import classes from './AllTours.module.css';
 
 
 //Create component for fetching all data and store in redux, after that show it in respective Link
@@ -18,7 +18,7 @@ import TourCards from '../../utils/TourCards/TourCards';
 import ErrorModal from '../../utils/ErrorModal';
 import LoadingBar from '../../utils/LoadingBar';
 
-import allStateNameArray from '../../assets/data/allStateNameArray';
+// import allStateNameArray from '../../assets/data/allStateNameArray';
 import { useHttpClient } from '../../custom-hooks/http-hook';
 // import { allTourActions } from '../../Store/AllTour-slice';
 

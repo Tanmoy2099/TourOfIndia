@@ -9,21 +9,24 @@ const router = Router();
 router.post('/signup', authController.signup);
 router.post('/login', authController.login);
 router.get('/logout', authController.logout);
-router.post('/photo', userController.sendPhoto)
+router.post('/photo', userController.sendPhoto);
 
-router.get('/loginRefresh', authController.protect, authController.LoginRefresh);
 
 
 router.post('/forgotPassword', authController.forgotPassword);
-router.get('/resetPassword/:token', (req, res, next) => {
-  res.render('resetPassword')
-})
+
+// router.get('/resetPassword/:token', (req, res, next) => {
+//   res.render('resetPassword')
+// })
+
+
 router.patch('/resetPassword/:token', authController.resetPassword);
 
 
 // Protect all routes after this middleware
 router.use(authController.protect);
       
+router.get('/loginRefresh', authController.LoginRefresh);
 
 //To Update password send (passwordCurrent, password, passwordConfirm)
 router.patch('/updatePassword', authController.updatePassword);

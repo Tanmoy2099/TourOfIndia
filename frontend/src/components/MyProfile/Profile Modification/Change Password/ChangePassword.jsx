@@ -60,7 +60,7 @@ const ChangePassword = () => {
         {/* Enter Current password */}
         <div className="form-outline mb-4">
           <label className="form-label" htmlFor="curPass">
-            Enter New Password *
+            Enter Current Password *
           </label>
           <input
             type="password"

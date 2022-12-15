@@ -5,21 +5,25 @@ export const useHttpClient = () => {
   const [error, setError] = useState();
 
   const activeHttpRequests = useRef([]);
-
+  
   const sendRequest = useCallback(
     async (url, method = 'GET', body = null, headers = {}) => {
       setIsLoading(true);
       const httpAbortCtrl = new AbortController();
       activeHttpRequests.current.push(httpAbortCtrl);
       if (method !== 'GET' || method !== 'DELETE') {
-        headers = { 'Content-Type': 'application/json' }
+        const backendUrl = process.env.REACT_APP_URL || 'https://tourindia.onrender.com'
+        headers = { ...headers, 'Access-Control-Allow-Origin': `${backendUrl}`, 'Content-Type': 'application/json' }
+        // headers = { ...headers, 'Content-Type': 'application/json' }
       }
-      
+
       try {
         const response = await fetch(url, {
           method,
           body,
           headers,
+          credentials: 'include',
+
           signal: httpAbortCtrl.signal,
         });
 

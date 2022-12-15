@@ -11,12 +11,6 @@ const MyProfile = () => {
   const [show, setShow] = useState(false);
 
 
-// useEffect(() => {
-
-// }, [data, actualPhoto]);
-
-
-
   return <>
     <ProfileContainer show={show}>
       
